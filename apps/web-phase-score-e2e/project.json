@@ -1,0 +1,30 @@
+{
+  "name": "web-phase-score-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/web-phase-score-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/web-phase-score-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "web-phase-score:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "web-phase-score:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "web-phase-score:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "implicitDependencies": ["web-phase-score"],
+  "tags": []
+}
