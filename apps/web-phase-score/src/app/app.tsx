@@ -1,14 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
-
-export function App() {
+export const App = () => {
   return (
     <div>
-      <NxWelcome title="web-phase-score" />
+      <h1 className={'text-2xl'}>Welcome to Phase Score</h1>
     </div>
   );
-}
-
-export default App;
+};
